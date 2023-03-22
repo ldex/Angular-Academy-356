@@ -20,7 +20,11 @@ export class ProductListComponent {
   constructor(
     private productService: ProductService
   ) {
-    this.products = productService.getProducts();
+    productService
+      .products$
+      .subscribe(
+        data => this.products = data
+      );
   }
 
 }
