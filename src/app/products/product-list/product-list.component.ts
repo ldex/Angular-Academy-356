@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/product.interface';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -11,6 +12,7 @@ export class ProductListComponent {
 
   title: string = 'Products';
   products: Product[];
+  products$: Observable<Product[]>;
   selectedProduct: Product;
 
   onSelect(product: Product) {
@@ -20,11 +22,13 @@ export class ProductListComponent {
   constructor(
     private productService: ProductService
   ) {
-    productService
-      .products$
-      .subscribe(
-        data => this.products = data
-      );
+    this.products$ = productService.products$;
+
+    // productService
+    //   .products$
+    //   .subscribe(
+    //     data => this.products = data
+    //   );
   }
 
 }
