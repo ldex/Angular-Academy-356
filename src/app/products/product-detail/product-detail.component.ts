@@ -32,7 +32,7 @@ export class ProductDetailComponent implements OnDestroy {
     //     .subscribe(
     //       result => this.product = result
     //     )
-    )
+    //)
   }
 
   ngOnDestroy(): void {
