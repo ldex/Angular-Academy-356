@@ -6,9 +6,7 @@
     <h2 class="loading">Loading products</h2>
 </ng-template>
 
-<div>
-    {{ productsNb }} products
-</div>
+
 
 <ul class="products" *ngIf="products$ | async as products;else loading">
     <li *ngFor="let product of products | slice:start:end"
@@ -20,6 +18,10 @@
         <span class="price">{{ product.price | currency:'CAD':'symbol-narrow':'.2' }}</span>
     </li>
 </ul>
+
+<div class="right">
+    <a routerLink="insert">Add new product...</a>
+</div>
 
 <div>
     <button (click)="previousPage()" [disabled]="start == 0">

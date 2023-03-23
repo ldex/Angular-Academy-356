@@ -49,7 +49,7 @@ export class ProductListComponent {
     this.products$ = productService
                         .products$
                         .pipe(
-                          tap(products => this.productsNb = products.length)
+                        //  tap(products => this.productsNb = products.length)
                         );
 
     // productService
