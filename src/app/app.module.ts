@@ -17,14 +17,14 @@ import { ErrorComponent } from './shared/error.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ProductsModule,
     HomeComponent,
     ContactComponent,
     AdminComponent,
-    ErrorComponent
+    ErrorComponent,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
